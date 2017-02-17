@@ -1,25 +1,42 @@
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RaisedButton from 'material-ui/RaisedButton';
+
 import styles from './header.css'
 
 class Header extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            topNavigationBarMenuDisplayed: false
+        }
+    }
+
+    clickedNavigationMobileToggler() {
+        this.setState({
+            topNavigationBarMenuDisplayed: !this.state.topNavigationBarMenuDisplayed
+        });
+    }
+
     render() {
+
         return (
-            <MuiThemeProvider>
-                <nav>
-                    <h1 className={styles.mainHeader}>This is the application header</h1>
+            <div>
+                <nav className="navbar navbar-toggleable-sm navbar-inverse fixed-top bg-inverse">
+                    <button className="navbar-toggler navbar-toggler-right" type="button"
+                            onClick={this.clickedNavigationMobileToggler.bind(this)}>
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <a className="navbar-brand" href="#">Sidemenu demonstration</a>
+                    <div
+                        className={styles.uxalTopNavMenu + " collapse navbar-collapse " + (this.state.topNavigationBarMenuDisplayed ? styles.show : "")}>
+                        <ul className="navbar-nav mr-auto">
 
-                    <RaisedButton
-                        label="Super Secret Password"
-                        secondary={true}
-                    />
+                        </ul>
+                    </div>
                 </nav>
-
-            </MuiThemeProvider>
+            </div>
         )
     }
 }
-
 
 export default Header;

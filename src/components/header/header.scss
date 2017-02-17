@@ -1,3 +1,23 @@
-.mainHeader{
-  background:red;
+.uxalTopNavMenu {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: height .35s ease;
+  -o-transition: height .35s ease;
+  transition: height .35s ease;
+  display: block;
+  height: 0;
+}
+
+.show {
+  height: 40px;
+  -webkit-transition: height .35s ease;
+  -o-transition: height .35s ease;
+  transition: height .35s ease;
+}
+
+@media (min-width: 576px) {
+  .uxalTopNavMenu {
+    compose: uxalTopNavMenuTop;
+    height:40px;
+  }
 }
