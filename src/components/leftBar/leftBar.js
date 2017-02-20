@@ -4,9 +4,9 @@ import FlatButton from 'material-ui/FlatButton';
 import Menu from 'material-ui/svg-icons/navigation/menu';
 import Close from 'material-ui/svg-icons/navigation/close';
 
-import styles from './sideMenu.css';
+import styles from './leftBar.css';
 
-class SideMenu extends Component {
+class LeftBar extends Component {
     constructor(props) {
         super(props);
 
@@ -40,7 +40,7 @@ class SideMenu extends Component {
                     onClick={this.animateSideMenu.bind(this)}
                     style={{minWidth: 'auto', textAlign: 'left', paddingLeft: '23px'}}
                 />
-                <div className={styles.uxalSideMenuList}>
+                <div className={"uxalSideMenu " + styles.uxalSideMenuList}>
                     {this.props.children}
                 </div>
             </aside>
@@ -48,7 +48,7 @@ class SideMenu extends Component {
     }
 }
 
-SideMenu.propTypes = {
+LeftBar.propTypes = {
     /**
      * This decides if the side menu is opened or not
      */
@@ -71,11 +71,11 @@ SideMenu.propTypes = {
 
 }
 
-SideMenu.defaultProps = {
+LeftBar.defaultProps = {
     expanded: false,
     closedWidth: 70,
     openedWidth: 300
 }
 
 
-export default SideMenu;
+export default LeftBar;
