@@ -43,8 +43,6 @@ class SideMenuItem extends Component {
                 else {
                     topPositionOfClickedElement += sideMenuContainer.scrollTop();
                 }
-
-                //sideMenuContainer.scrollTop($this.position().top);
                 sideMenuContainer.animate({
                     scrollTop: topPositionOfClickedElement
                 }, 1000);
